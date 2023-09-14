@@ -1,0 +1,5 @@
+{
+    "Model": "simsiam_resnet50_8xb32-coslr-200e_in1k",
+    "Fusion": "Morph",
+    "Type": "Deep"
+}

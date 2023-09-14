@@ -1,0 +1,5 @@
+{
+    "Model": "efficientnet-b7_3rdparty-ra-noisystudent_in1k",
+    "Fusion": "Morph",
+    "Type": "Deep"
+}

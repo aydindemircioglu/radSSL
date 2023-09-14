@@ -1,0 +1,5 @@
+{
+    "Model": "convnext-v2-large_fcmae-in21k-pre_3rdparty_in1k",
+    "Fusion": "All",
+    "Type": "Deep"
+}

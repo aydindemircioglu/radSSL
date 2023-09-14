@@ -1,0 +1,5 @@
+{
+    "Model": "simclr_resnet50_16xb256-coslr-200e_in1k",
+    "Fusion": "None",
+    "Type": "Deep"
+}

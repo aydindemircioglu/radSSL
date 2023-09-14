@@ -1,0 +1,5 @@
+{
+    "Model": "radimagenet.IRV2",
+    "Fusion": "Morph",
+    "Type": "Deep"
+}

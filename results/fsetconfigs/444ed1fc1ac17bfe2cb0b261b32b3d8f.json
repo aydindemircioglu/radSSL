@@ -1,0 +1,5 @@
+{
+    "Model": "efficientnetv2-l_in21k-pre_3rdparty_in1k",
+    "Fusion": "All",
+    "Type": "Deep"
+}

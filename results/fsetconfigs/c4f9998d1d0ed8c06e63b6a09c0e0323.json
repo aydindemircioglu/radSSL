@@ -1,0 +1,5 @@
+{
+    "Model": "efficientnet-b2_3rdparty_8xb32_in1k",
+    "Fusion": "Morph",
+    "Type": "Deep"
+}

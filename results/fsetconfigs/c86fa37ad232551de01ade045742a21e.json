@@ -1,0 +1,5 @@
+{
+    "Model": "resnet34_8xb32_in1k",
+    "Fusion": "All",
+    "Type": "Deep"
+}

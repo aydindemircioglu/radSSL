@@ -1,0 +1,5 @@
+{
+    "Model": "radimagenet.resnet50",
+    "Fusion": "All",
+    "Type": "Deep"
+}

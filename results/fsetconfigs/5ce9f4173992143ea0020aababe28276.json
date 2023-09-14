@@ -1,0 +1,5 @@
+{
+    "Model": "mocov3_resnet50_8xb512-amp-coslr-300e_in1k",
+    "Fusion": "Morph",
+    "Type": "Deep"
+}

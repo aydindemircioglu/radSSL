@@ -1,0 +1,5 @@
+{
+    "Model": "radimagenet.densenet121",
+    "Fusion": "None",
+    "Type": "Deep"
+}

@@ -1,0 +1,5 @@
+{
+    "Model": "densenet161_3rdparty_in1k",
+    "Fusion": "Morph",
+    "Type": "Deep"
+}

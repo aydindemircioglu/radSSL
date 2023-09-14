@@ -1,0 +1,5 @@
+{
+    "Model": "medicalimagenet.resnet10",
+    "Fusion": "None",
+    "Type": "Deep"
+}

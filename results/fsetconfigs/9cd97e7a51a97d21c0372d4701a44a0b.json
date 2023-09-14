@@ -1,0 +1,5 @@
+{
+    "Model": "deit3-huge-p14_in21k-pre_3rdparty_in1k",
+    "Fusion": "Morph",
+    "Type": "Deep"
+}

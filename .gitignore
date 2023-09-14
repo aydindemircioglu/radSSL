@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+results/*.png
+results/*.npy
+
+tmp/
+tmp/*
+radNorm.env
+radNorm.env/*
+old/*
+old
+mmpretrain
+mmpretrain/*
