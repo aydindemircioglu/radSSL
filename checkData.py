@@ -72,7 +72,7 @@ if __name__ == "__main__":
         dTable.append({"data": dataID, "Modality": mod, "N": len(rx), "Inplane Resolution": getStr(rx),  "Slice Thickness": getStr(rz)})
         #print(dataID, sorted(rz))
     dTable = pd.DataFrame(dTable)
-    dTable.to_excel("./paper/Table_1.xlsx")
+    dTable.to_excel("./results/Data.xlsx")
     print (dTable)
 
 #
