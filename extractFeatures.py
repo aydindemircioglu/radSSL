@@ -2,28 +2,15 @@
 import os
 import pandas as pd
 from radiomics import featureextractor
-import random
-import SimpleITK as sitk
 from sklearn.model_selection import RepeatedStratifiedKFold
 
 import json
-import cv2
-import nibabel as nib
-import argparse
-import logging
-import math
-import numpy as np
-import itertools
-from pathlib import Path
 from joblib import Parallel, delayed, load, dump
 
 # this shit simply hangs if the GPU memory is full. instead of warning
 # or erroring. it just stalls. thank you tensorflow, now die.
 import tensorflow as tf
 from keras import backend as K
-from tensorflow.keras.applications.resnet50 import ResNet50
-from tensorflow.keras.preprocessing import image
-from tensorflow.keras.applications.resnet50 import preprocess_input, decode_predictions
 
 # take care of tensorflow shit. fucking die already!!
 config = tf.compat.v1.ConfigProto()
@@ -36,11 +23,10 @@ from helpers import *
 from parameters import *
 
 import medicalnet
-from mmpretrain import FeatureExtractor, get_model
+from mmpretrain import get_model
 from KerasFeatureExtractor import KerasFeatureExtractor
 from MMPretrainFeatureExtractor import MMPretrainFeatureExtractor
 from MedicalImageNetFeatureExtractor import MedicalImageNetFeatureExtractor
-import RadiomicDataset
 
 
 def generateSplits ():
@@ -61,7 +47,6 @@ def generateSplits ():
                     idxList[r][k] = (trainIDs, testIDs)
             dump (idxList, cacheFile)
     print ("    Done.")
-    pass
 
 
 
@@ -316,7 +301,6 @@ def processDataset (dataID, expKey, expDict, firstFoldOnly = False):
 
             trainFeats.to_csv(trainFile, index = False)
             testFeats.to_csv(testFile, index = False)
-    pass
 
 
 

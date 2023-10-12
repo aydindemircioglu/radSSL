@@ -4,9 +4,7 @@ import pandas as pd
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import GlobalMaxPooling2D
-from tensorflow.python.keras.applications import inception_resnet_v2
 from glob import glob
-import torch
 
 from parameters import *
 

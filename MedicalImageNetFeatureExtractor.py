@@ -1,7 +1,6 @@
 import torch
 import numpy as np
 import pandas as pd
-from glob import glob
 import torch.nn as nn
 
 from RadiomicDataset import *
@@ -40,7 +39,6 @@ class MedicalImageNetFeatureExtractor:
 
 
 if __name__ == "__main__":
-    import medicalnet
     fsID = "641351e6bea78b47fd5ddbc23a229816"
     for dataID in dList:
         df = pd.read_csv(os.path.join(featuresPath, dataID, f"{fsID}_{dataID}_0_0_train.csv"))

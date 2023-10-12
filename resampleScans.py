@@ -1,12 +1,6 @@
 #
-import pandas as pd
 from joblib import Parallel, delayed
 import os
-import multiprocessing
-import time
-import multiprocessing.pool
-import functools
-from glob import glob
 import nibabel as nib
 import nibabel.processing as nibp
 
@@ -47,7 +41,6 @@ def processFile (row, p):
 
     nib.save(rimg, fout_img)
     nib.save(rSeg, fout_mask)
-    pass
 
 
 

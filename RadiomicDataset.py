@@ -1,9 +1,7 @@
 # Written by Whalechen
 # https://github.com/Tencent/MedicalNet/blob/18c8bb6cd564eb1b964bffef1f4c2283f1ae6e7b/datasets/brains18.py
 
-import math
 import os
-import random
 import pandas as pd
 from glob import glob
 import torch.nn as nn
@@ -13,7 +11,6 @@ import numpy as np
 import torch
 from torch.utils.data import DataLoader
 from torch.utils.data import Dataset
-import nibabel
 from scipy import ndimage
 
 #import albumentations as A

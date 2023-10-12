@@ -1,35 +1,17 @@
 #!/usr/bin/python3
 
-import copy
 import cv2
-import hashlib
 import itertools
-import json
 import logging
-import math
-import matplotlib.pyplot as plt
-import multiprocessing
 import numpy as np
 import os
 import pandas as pd
-import pathlib
-import pickle
 import random
-import shutil
-import socket
-import sys
-import tempfile
 import time
-from tqdm import trange, tqdm
+from tqdm import tqdm
 
-from collections import OrderedDict
-from datetime import datetime
-from functools import partial
 from glob import glob
-from joblib import Parallel, delayed, load, dump
-from pprint import pprint
-from matplotlib import pyplot
-from typing import Dict, Any
+from joblib import Parallel, delayed, dump
 
 from tabpfn.scripts.transformer_prediction_interface import TabPFNClassifier
 from sklearn.impute import SimpleImputer
@@ -37,26 +19,14 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.neural_network import MLPClassifier
 from sklearn.utils._testing import ignore_warnings
 from sklearn.exceptions import ConvergenceWarning
-from sklearn.feature_selection import RFE, RFECV
-from sklearn.feature_selection import f_classif
-from sklearn.dummy import DummyClassifier
-from sklearn.metrics import confusion_matrix
-from sklearn.metrics import roc_curve, auc, roc_auc_score, precision_recall_curve
-from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score, classification_report
 from sklearn.linear_model import LogisticRegression, SGDClassifier
-from sklearn.svm import SVC, LinearSVC
+from sklearn.svm import SVC
 from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import GridSearchCV
-from sklearn.model_selection import cross_val_score
 from sklearn.preprocessing import StandardScaler
-from sklearn.covariance import EllipticEnvelope
-from sklearn.ensemble import IsolationForest, RandomForestClassifier
-from sklearn.model_selection import RepeatedStratifiedKFold
-from sklearn.pipeline import Pipeline
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.feature_selection import SelectKBest, SelectFromModel
 from sklearn.ensemble import ExtraTreesClassifier
 from sklearn.neural_network import MLPClassifier
-from sklearn.utils import resample
 
 #from ITMO_FS.filters.univariate import anova
 
@@ -349,7 +319,6 @@ def executeExperiment (traindf, testdf, eConfig, fResults):
     stats["Time_Overall"] =  timeFSEnd - timeFSStart
     stats["eConfig"] = eConfig
     dump (stats, fResults)
-    pass
 
 
 def executeExperiments (e, traindf, testdf):

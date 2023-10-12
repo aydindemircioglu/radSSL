@@ -1,8 +1,6 @@
 import os
 import numpy as np
 from scipy.special import binom
-import matplotlib.pyplot as plt
-from PIL import Image
 import cv2
 import itertools
 import random

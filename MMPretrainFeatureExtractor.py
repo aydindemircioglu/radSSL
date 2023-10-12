@@ -1,12 +1,9 @@
 import torch
-import numpy as np
-from glob import glob
 import pandas as pd
 import torch.nn as nn
 
-from mmpretrain import FeatureExtractor, get_model
+from mmpretrain import FeatureExtractor
 
-from parameters import *
 
 
 class MMPretrainFeatureExtractor:
