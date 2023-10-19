@@ -293,63 +293,6 @@ def generateMetricsTable(tableAll, table1):
 
 
 
-def getPerDatasetPlot(DPI=200):
-    bP = []
-    for d in dList:
-        bP.append({"Dataset": d, "Type": "Generic", "AUC": np.max(table1_generic[d])})
-        bP.append({"Dataset": d, "Type": "Medical", "AUC": np.max(table1_med[d])})
-        bP.append({"Dataset": d, "Type": "ImageNet", "AUC": np.max(table1_other[d])})
-    bP = pd.DataFrame(bP)
-    o = bP.query("Type == 'ImageNet'").sort_values(["AUC"])["Dataset"]
-    DPI = 70
-    fig, ax = plt.subplots(1, 3, figsize=(20, 6), dpi=DPI)
-    plt.xticks(fontsize=20)
-    plt.yticks(fontsize=20)
-    plt.ylabel("AUC", fontsize=22, labelpad=12)
-    plt.xlabel("Dataset", fontsize=22, labelpad=12)
-
-    for j, subkey in enumerate(["None", "Morph", "All"]):
-        gmkeys = [k for k in list(table1_med.index) if "+" + subkey in k]
-        table1_med_none = table1_med.query("index in @gmkeys")
-        gmkeys = [k for k in list(table1_other.index) if "+" + subkey in k]
-        table1_other_none = table1_other.query("index in @gmkeys")
-        bP = []
-        for d in dList:
-            bP.append(
-                {"Dataset": d, "Type": "Generic", "AUC": np.max(table1_generic[d])}
-            )
-            bP.append(
-                {"Dataset": d, "Type": "Medical", "AUC": np.max(table1_med_none[d])}
-            )
-            bP.append(
-                {"Dataset": d, "Type": "ImageNet", "AUC": np.max(table1_other_none[d])}
-            )
-
-        if 1 == 1:
-            cp = sns.color_palette("hls", 3)
-            bP = pd.DataFrame(bP)
-            bP = bP.set_index("Dataset").loc[o].reset_index()
-            sns.lineplot(
-                ax=ax[j],
-                x="Dataset",
-                y="AUC",
-                hue="Type",
-                data=bP,
-                palette=cp,
-                sort=False,
-                linewidth=3,
-            )
-
-            plt.setp(ax[j].get_legend().get_texts(), fontsize="16")  # for legend text
-            plt.setp(ax[j].get_legend().get_title(), fontsize="20")  # for legend title
-            # ax.set_xticks(nList[1:])#, rotation = 0, ha = "right", fontsize = 22)
-            ax[j].xaxis.tick_bottom()
-            ax[j].yaxis.tick_left()
-
-        plt.tight_layout()
-        fig.savefig("./results/Figure_4.png", facecolor="w", bbox_inches="tight")
-
-
 def getStr(k):
     if k == "Generic+NoMorph+2D":
         return "Generic, -Morph, 2D"
@@ -597,13 +540,13 @@ def generateMetricPlots (tableAll):
     for f in ["None", "Morph", "All"]:
         if f == "None":
             strf = "out fusion"
-            fname = "./paper/Figure_2.png"
+            fname = "./paper/Figure4.png"
         elif f == "Morph":
             strf = " morphological features"
-            fname = "./paper/Figure_3.png"
+            fname = "./paper/Figure5.png"
         elif f == "All":
             strf = " all hand-crafted features"
-            fname = "./paper/Figure_4.png"
+            fname = "./paper/Figure6.png"
 
         filtered_df = tableAll[(tableAll['Type'] == 'Deep') & (tableAll['Fusion'] == f)]
         fig, axes = plt.subplots(2, 3, figsize=(15, 10))
@@ -815,7 +758,7 @@ def generateModelAUCPlots (pdata, psize, fsize):
 
     plt.tight_layout()
     plt.subplots_adjust(top=0.9, hspace=0.36, wspace=0.33)
-    plt.savefig("./paper/Figure_5.png", dpi=333)
+    plt.savefig("./paper/Figure3.png", dpi=333)
     plt.close('all')
 
 
